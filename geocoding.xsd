@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="geocoding_results">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="LEGAL_COPYRIGHT"/>
+        <xs:element ref="STATUS"/>
+        <xs:element ref="ACCOUNT"/>
+        <xs:element ref="RESULTS"/>
+        <xs:element ref="STATISTICS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LEGAL_COPYRIGHT">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="copyright_notice"/>
+        <xs:element ref="copyright_logo"/>
+        <xs:element ref="terms_of_service"/>
+        <xs:element ref="privacy_policy"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="copyright_notice" type="xs:string"/>
+  <xs:element name="copyright_logo" type="xs:anyURI"/>
+  <xs:element name="terms_of_service" type="xs:anyURI"/>
+  <xs:element name="privacy_policy" type="xs:anyURI"/>
+  <xs:element name="STATUS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="access"/>
+        <xs:element ref="status"/>
+        <xs:element ref="address_provided"/>
+        <xs:element ref="result_count"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="access" type="xs:string"/>
+  <xs:element name="status" type="xs:NCName"/>
+  <xs:element name="address_provided" type="xs:string"/>
+  <xs:element name="result_count" type="xs:integer"/>
+  <xs:element name="ACCOUNT">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ip_address"/>
+        <xs:element ref="distribution_license"/>
+        <xs:element ref="usage_limit"/>
+        <xs:element ref="used_today"/>
+        <xs:element ref="used_total"/>
+        <xs:element ref="first_used"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ip_address">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="distribution_license" type="xs:string"/>
+  <xs:element name="usage_limit" type="xs:integer"/>
+  <xs:element name="used_today" type="xs:integer"/>
+  <xs:element name="used_total" type="xs:integer"/>
+  <xs:element name="first_used" type="xs:string"/>
+  <xs:element name="RESULTS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="result"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="result">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="result_number"/>
+        <xs:element ref="formatted_address"/>
+        <xs:element ref="accuracy"/>
+        <xs:element ref="ADDRESS"/>
+        <xs:element ref="LOCATION_DETAILS"/>
+        <xs:element ref="COORDINATES"/>
+        <xs:element ref="BOUNDARIES"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="result_number" type="xs:integer"/>
+  <xs:element name="formatted_address" type="xs:string"/>
+  <xs:element name="accuracy" type="xs:NCName"/>
+  <xs:element name="ADDRESS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="street_number"/>
+        <xs:element ref="street_name"/>
+        <xs:element ref="locality"/>
+        <xs:element ref="admin_2"/>
+        <xs:element ref="admin_1"/>
+        <xs:element ref="postal_code"/>
+        <xs:element ref="country"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="street_number" type="xs:integer"/>
+  <xs:element name="street_name" type="xs:string"/>
+  <xs:element name="locality" type="xs:string"/>
+  <xs:element name="admin_2" type="xs:NCName"/>
+  <xs:element name="admin_1" type="xs:NCName"/>
+  <xs:element name="postal_code" type="xs:integer"/>
+  <xs:element name="country" type="xs:NCName"/>
+  <xs:element name="LOCATION_DETAILS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="elevation"/>
+        <xs:element ref="timezone_long"/>
+        <xs:element ref="timezone_short"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="elevation" type="xs:NCName"/>
+  <xs:element name="timezone_long" type="xs:NCName"/>
+  <xs:element name="timezone_short" type="xs:string"/>
+  <xs:element name="COORDINATES">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="latitude"/>
+        <xs:element ref="longitude"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="latitude" type="xs:decimal"/>
+  <xs:element name="longitude" type="xs:decimal"/>
+  <xs:element name="BOUNDARIES">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="northeast_latitude"/>
+        <xs:element ref="northeast_longitude"/>
+        <xs:element ref="southwest_latitude"/>
+        <xs:element ref="southwest_longitude"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="northeast_latitude" type="xs:decimal"/>
+  <xs:element name="northeast_longitude" type="xs:decimal"/>
+  <xs:element name="southwest_latitude" type="xs:decimal"/>
+  <xs:element name="southwest_longitude" type="xs:decimal"/>
+  <xs:element name="STATISTICS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="https_ssl"/>
+        <xs:element ref="time_taken"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="https_ssl" type="xs:string"/>
+  <xs:element name="time_taken" type="xs:decimal"/>
+</xs:schema>
